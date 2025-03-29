@@ -1,0 +1,164 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundWrapper {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("#"); /* Replace with actual path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+  padding: 0 5%;
+  position: relative;
+}
+
+/* LEFT SIDE (Text & Button) */
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding-right: 2rem;
+}
+
+.heading {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 0;
+  color: white;
+  line-height: 1;
+}
+
+.subheading {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 2rem;
+  color: #d4ad6a;
+  line-height: 1;
+}
+
+.bookButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4ad6a;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  width: fit-content;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.bookButton:hover {
+  background-color: #c09a5a;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+
+/* RIGHT SIDE (Cards Section) */
+.cardsSection {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cardsContainer {
+  width: 100%;
+  height: 80%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  width: 85%;
+  height: 60%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.activeCard {
+  z-index: 10;
+  transform: scale(1.05);
+}
+
+.cardIconContainer {
+  color: #d4ad6a;
+  background-color: rgba(212, 173, 106, 0.2);
+  border-radius: 50%;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cardContent {
+  color: white;
+}
+
+.cardTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  color: #eee;
+}
+
+/* Navigation Buttons */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(212, 173, 106, 0.8);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background-color: rgba(212, 173, 106, 1);
+}
+
+.navButton:first-of-type {
+  left: -50px;
+}
+
+.navButton:last-of-type {
+  right: -50px;
+}
