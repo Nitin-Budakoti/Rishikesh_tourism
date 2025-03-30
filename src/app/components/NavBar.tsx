@@ -1,44 +1,37 @@
 "use client";
 
-import { useState, ChangeEvent } from "react";
-import { Search, User } from "lucide-react";
+import { User } from "lucide-react";
 import styles from "./NavBar.module.css";
 
 const Navbar: React.FC = () => {
-  const [search, setSearch] = useState<string>("");
-
-  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
-
   return (
     <nav className={styles.navbar}>
-      {/* Left: Navigation Links */}
+      {/* Logo of the website */}
+      <div className={styles.logo}>
+        <b className={styles.heading}>Himalayan Bliss</b>
+      </div>
+
+      {/* Navigation Links */}
       <div className={styles.navLinks}>
         <a href="#" className={styles.link}>Home</a>
-        <a href="#" className={styles.link}>About Us</a>
-        <a href="#" className={styles.link}>Explore</a>
-        <a href="#" className={styles.link}>Services</a>
+        <a href="#" className={styles.link}>Hotel</a>
+        <a href="#" className={styles.link}>Homestay</a>
+        <a href="#" className={styles.link}>Holiday Packages</a>
+        <a href="#" className={styles.link}>Adventure Activities</a>
+        <a href="#" className={styles.link}>Ashrams</a>
       </div>
 
-      {/* Center: Search Bar */}
-      <div className={styles.searchContainer}>
-        <input
-          type="text"
-          placeholder="Search.."
-          value={search}
-          onChange={handleSearchChange}
-          className={styles.searchInput}
-        />
-        <button className={styles.searchIcon} aria-label="Search">
-          <Search size={20} />
-        </button>
-      </div>
-
-      {/* Right: Login */}
-      <div className={styles.loginSection}>
-        <User size={24} className={styles.userIcon} />
-        <button className={styles.loginButton}>LOG IN</button>
+      {/* Right Section: Contact & Login */}
+      <div className={styles.rightSection}>
+        {/* Contact Us Button with "tel:" link */}
+        <a href="tel:+917983394755" className={styles.contactButton}>
+          Contact Us
+        </a>
+        
+        <div className={styles.loginSection}>
+          <User size={24} className={styles.userIcon} />
+          <button className={styles.loginButton}>LOG IN</button>
+        </div>
       </div>
     </nav>
   );
